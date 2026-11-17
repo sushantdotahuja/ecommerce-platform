@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:17
+    container_name: order-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: order_db
+      POSTGRES_USER: order_user
+      POSTGRES_PASSWORD: order_pass
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
